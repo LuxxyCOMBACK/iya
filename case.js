@@ -2547,6 +2547,7 @@ case 'creator': {
 			case 'brat':{
   newReply(`*Brat Tersedia*
 ┏ ⏤͟͟͞͞╳── *『 ʙʀᴀᴛ 』*
+┣➤bratandro 𝙁𝙧𝙚𝙚
 ┣➤bratip 𝙁𝙧𝙚𝙚
 ┣➤bratgif 𝙋𝙧𝙚𝙢𝙞𝙪𝙢
 ┗━━━━━━━━━━━━━━━━⊱*`);
@@ -2603,7 +2604,33 @@ cooldowns[userId] = now; // Set cooldown user
     cooldowns[userId] = now; // Set cooldown user
 
     try {
-        const buffer = await getBuffer(`https://brat.caliphdev.com/api/brat?text=${encodeURIComponent(text)}`);
+        const buffer = await getBuffer(`https://brat.caliphdev.com/api/brat/?text=${encodeURIComponent(text)}`);
+        await haruka.sendImageAsSticker(m.chat, buffer, m, { packname: botName, author: ownerName });
+        await sendReact(m.key, 1); // Reaksi sukses "✅"
+    } catch (err) {
+        console.error(err);
+        await sendReact(m.key, 2); // Reaksi error "❌"
+        newReply('Terjadi kesalahan saat membuat stiker gambar. 😞');
+    }
+}
+break
+
+			case 'bratandro': {
+    await sendReact(m.key, 0); // Kirim reaksi "🕒" saat memproses
+    if (!text) return newReply(`Contoh : ${prefix + command} Hai kak`);
+
+    const userId = m.sender;
+    const now = Date.now();
+
+    if (cooldowns[userId] && now - cooldowns[userId] < 10000) { // 10 detik cooldown
+        const remainingTime = ((10000 - (now - cooldowns[userId])) / 1000).toFixed(1);
+        return newReply(`Tunggu *${remainingTime}* detik sebelum menggunakan perintah ini lagi.`);
+    }
+
+    cooldowns[userId] = now; // Set cooldown user
+
+    try {
+        const buffer = await getBuffer(`https://fgsi-brat.hf.space/?text=${encodeURIComponent(text)}`);
         await haruka.sendImageAsSticker(m.chat, buffer, m, { packname: botName, author: ownerName });
         await sendReact(m.key, 1); // Reaksi sukses "✅"
     } catch (err) {
@@ -3282,10 +3309,11 @@ let toolsMenu = `*🛠️ Alat canggih untuk semua kebutuhanmu!*
 ┣➤ ${prefix}runtime
 ┣➤ ${prefix}truth
 ┣➤ ${prefix}dare
+┣➤ ${prefix}bratip
+┣➤ ${prefix}bratandro
 ┣➤ ${prefix}hd 𝙋𝙍𝙀𝙈
 ┣➤ ${prefix}remini 𝙋𝙍𝙀𝙈
 ┣➤ ${prefix}bratgif 𝙋𝙍𝙀𝙈
-┣➤ ${prefix}bratip
 ┣➤ ${prefix}getpp 𝙋𝙍𝙀𝙈
 ┣➤ ${prefix}qc 𝙋𝙍𝙀𝙈
 ┣➤ ${prefix}sticker 𝙋𝙍𝙀𝙈
