@@ -1,0 +1,38 @@
+SCRIPT INI DIBUAT OLEH RIZAL MENGGUNAKAN BASE DARI HARUKA
+
+==========================================
+JANGAN HAPUS CREDITS GW YA ANJING, APALAGI 
+UDAH HAPUS CREDITS TERUS DIJUAL EMANG ANAK 
+KONTOL. 
+==========================================
+
+
+#####🗿
+CARA RECODE 
+
+1 CARA RECODE TEKS MENU
+
+- MASUK KE FOLDER lib/case.js
+
+2. CARA RECODE OWNER 
+
+- MASUK KE okaw.js UBAH NOMORMU
+- MASUK KE owner.json UBAH KE NOMORMU
+
+3. CARA RECODE GAMBAR 
+
+- MASUK KE baseoka/image UBAH SESUAI KEINGINAN LU
+- MASUK KE oka.js CARI DI LINER 234 KALIAN CARI const reply KALO UDAH YANG thumbnailUrl KALIAN UBAH JADI LINK GAMBAR LU, KEK GINI CONTOHNYA
+
+ thumbnailUrl : 'Link gambarlu'
+
+-------------------
+GA BISA RECODE? 🗿
+-------------------
+
+PAKE JASA GW AJA🗿
+
+SUNG DM  GW : 083119115977
+
+JANGAN DIJUAL SCNYA !!!!! 
+
